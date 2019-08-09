@@ -11,6 +11,17 @@
 - prop-types
 
 
+### TODO
+- [x] antd ui
+- [x] react-router
+- [x] react-redux
+- [ ] admin ui
+- [ ] permission
+- [ ] multi api
+- [ ] pipeline
+- [ ] sso
+
+
 ### Usage
 
 install dependency
