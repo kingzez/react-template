@@ -1,9 +1,9 @@
 import React from 'react'
 import { Route, Switch } from 'react-router'
-import Layout from '../containers/Layout'
-import Hello from '../containers/Hello'
-import Counter from '../containers/Counter'
-import NoMatch from '../containers/NoMatch'
+import Layout from 'containers/Layout'
+import Hello from 'containers/Hello'
+import Counter from 'containers/Counter'
+import NoMatch from 'containers/NoMatch'
 
 export const routeList = [
   {
