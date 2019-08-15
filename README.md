@@ -15,7 +15,7 @@
 - [x] antd ui
 - [x] react-router
 - [x] react-redux
-- [ ] admin ui
+- [x] admin layout
 - [ ] permission
 - [ ] multi api
 - [ ] pipeline
