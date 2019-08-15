@@ -1,21 +1,49 @@
 import React from 'react'
 import { Route, Switch } from 'react-router'
-import Home from '../containers/Home'
+import Layout from '../containers/Layout'
 import Hello from '../containers/Hello'
 import Counter from '../containers/Counter'
 import NoMatch from '../containers/NoMatch'
-import NavBar from '../containers/NavBar'
+
+export const routeList = [
+  {
+    icon: 'user',
+    title: 'Home',
+    path: '/',
+    component: Layout
+  },
+  {
+    icon: 'video-camera',
+    title: 'hello',
+    path: '/hello',
+    component: Hello
+  },
+  {
+    icon: 'upload',
+    title: 'Counter',
+    path: '/counter',
+    component: Counter
+  },
+  {
+    icon: 'download',
+    title: 'download',
+    path: '/aaa',
+    component: Counter
+  }
+]
 
 const routes = (
-  <div>
-    <NavBar />
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/hello" component={Hello} />
-        <Route path="/counter" component={Counter} />
-        <Route component={NoMatch} />
-      </Switch>
-  </div>
+  <Switch>
+    {routeList.map(item => (
+      <Route
+        exact={item.path === '/' ? true : false}
+        path={item.path}
+        component={item.component}
+        key={item.path}
+      />
+    ))}
+    <Route component={NoMatch} />
+  </Switch>
 )
 
 export default routes
