@@ -1,47 +1,82 @@
 import React from 'react'
 import { Route, Switch } from 'react-router'
-import Layout from 'containers/Layout'
+import Home from 'containers/Home'
 import Hello from 'containers/Hello'
 import Counter from 'containers/Counter'
 import NoMatch from 'containers/NoMatch'
 
 export const routeList = [
   {
-    icon: 'user',
+    icon: 'home',
     title: 'Home',
     path: '/',
-    component: Layout
+    exact: true,
+    component: Home
   },
   {
-    icon: 'video-camera',
-    title: 'hello',
-    path: '/hello',
-    component: Hello
+    icon: 'smile',
+    title: 'Nest',
+    path: '/nest',
+    exact: false,
+    component: '',
+    children: [
+      {
+        icon: 'user-add',
+        title: 'One',
+        path: '/nest/one',
+        exact: true,
+        component: () => <div>One</div>
+      },
+      {
+        icon: 'usergroup-add',
+        title: 'Two',
+        path: '/nest/two',
+        exact: true,
+        component: () => <div>Two</div>
+      }
+    ]
   },
   {
-    icon: 'upload',
+    icon: 'calculator',
     title: 'Counter',
     path: '/counter',
+    exact: true,
     component: Counter
   },
   {
-    icon: 'download',
-    title: 'download',
-    path: '/aaa',
-    component: Counter
+    icon: 'code',
+    title: 'Hello',
+    path: '/hello',
+    exact: true,
+    component: Hello
   }
 ]
 
+// TODO：not good, just support level two
+function RouteWithSubRoutes(route) {
+  return (
+    <Route
+      key={route.path}
+      exact={route.exact}
+      path={route.path}
+      component={route.component}>
+      {route.children && route.children.length > 0
+        ? route.children.map(subRoute => (
+            <Route
+              key={subRoute.path}
+              exact={subRoute.exact}
+              path={subRoute.path}
+              component={subRoute.component}
+            />
+          ))
+        : null}
+    </Route>
+  )
+}
+
 const routes = (
   <Switch>
-    {routeList.map(item => (
-      <Route
-        exact={item.path === '/' ? true : false}
-        path={item.path}
-        component={item.component}
-        key={item.path}
-      />
-    ))}
+    {routeList.map(route => RouteWithSubRoutes(route))}
     <Route component={NoMatch} />
   </Switch>
 )

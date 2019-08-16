@@ -21,6 +21,7 @@
       "git add"
     ]
   },
+  "homepage" : "http://kingzez.github.io/react-template",
   "dependencies": {
     "antd": "^3.20.7",
     "connected-react-router": "^6.5.2",
