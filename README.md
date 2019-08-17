@@ -13,15 +13,18 @@
 
 ### TODO
 - [x] antd ui
+- [x] custom theme
 - [x] react-router
 - [x] react-redux
 - [x] admin layout
 - [x] sidebar support nest
+- [x] create-rtpl ([create-rtpl](https://github.com/kingzez/create-rtpl) template installer)
 - [ ] fetch package
 - [ ] permission
 - [ ] multi api
 - [ ] pipeline
 - [ ] sso
+- [ ] ts version
 
 
 ### Usage
