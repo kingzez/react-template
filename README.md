@@ -19,12 +19,12 @@
 - [x] admin layout
 - [x] sidebar support nest
 - [x] create-rtpl ([create-rtpl](https://github.com/kingzez/create-rtpl) template installer)
+- [x] typescript version priority
 - [ ] fetch package
 - [ ] permission
 - [ ] multi api
 - [ ] pipeline
 - [ ] sso
-- [ ] ts version
 - [ ] graphql
 
 
