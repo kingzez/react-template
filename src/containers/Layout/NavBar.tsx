@@ -1,11 +1,22 @@
 import React from 'react'
+import { Dispatch } from 'redux'
 import { connect } from 'react-redux'
 import { Layout, Icon } from 'antd'
+import { ApplicationState } from 'reducers'
 import { toggle, close } from 'actions/sidebar'
+
+interface StateProps {
+  collapsed: boolean
+}
+
+interface DispatchProps {
+  close: () => void
+  toggle: () => void
+}
 
 const { Header } = Layout
 
-const NavBar = props => (
+const NavBar = (props: StateProps & DispatchProps) => (
   <Header
     style={{
       background: '#fff',
@@ -20,11 +31,11 @@ const NavBar = props => (
   </Header>
 )
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state: ApplicationState) => ({
   collapsed: state.collapsed
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   toggle: () => dispatch(toggle()),
   close: () => dispatch(close())
 })

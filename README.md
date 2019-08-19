@@ -25,6 +25,7 @@
 - [ ] pipeline
 - [ ] sso
 - [ ] ts version
+- [ ] graphql
 
 
 ### Usage

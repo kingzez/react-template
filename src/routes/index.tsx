@@ -1,11 +1,18 @@
 import React from 'react'
-import { Route, Switch } from 'react-router'
+import { Route, Switch, RouteProps } from 'react-router'
 import Home from 'containers/Home'
 import Hello from 'containers/Hello'
 import Counter from 'containers/Counter'
 import NoMatch from 'containers/NoMatch'
 
-export const routeList = [
+interface RouteEle extends RouteProps {
+  icon?: string
+  title: string
+  children?: RouteEle[]
+  path: string
+}
+
+export const routeList: RouteEle[] = [
   {
     icon: 'home',
     title: 'Home',
@@ -18,7 +25,6 @@ export const routeList = [
     title: 'Nest',
     path: '/nest',
     exact: false,
-    component: '',
     children: [
       {
         icon: 'user-add',
@@ -53,7 +59,7 @@ export const routeList = [
 ]
 
 // TODO：not good, just support level two
-function RouteWithSubRoutes(route) {
+function RouteWithSubRoutes(route: RouteEle) {
   return (
     <Route
       key={route.path}
@@ -61,7 +67,7 @@ function RouteWithSubRoutes(route) {
       path={route.path}
       component={route.component}>
       {route.children && route.children.length > 0
-        ? route.children.map(subRoute => (
+        ? route.children.map((subRoute: RouteEle) => (
             <Route
               key={subRoute.path}
               exact={subRoute.exact}

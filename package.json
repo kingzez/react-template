@@ -1,14 +1,47 @@
 {
-  "name": "react-template",
+  "name": "react-template-ts",
   "version": "0.1.0",
-  "private": true,
   "scripts": {
-    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
-    "eject": "react-app-rewired eject",
+    "eject": "react-scripts eject",
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
     "serve": "serve -s build"
+  },
+  "author": "wangzezhi",
+  "homepage": "http://kingzez.github.io/react-template",
+  "dependencies": {
+    "antd": "^3.22.0",
+    "connected-react-router": "^6.5.2",
+    "history": "^4.9.0",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "react-redux": "^7.1.0",
+    "react-router": "^5.0.1",
+    "react-router-dom": "^5.0.1",
+    "react-scripts": "3.1.1",
+    "redux": "^4.0.4",
+    "typescript": "3.5.3"
+  },
+  "devDependencies": {
+    "@types/jest": "24.0.17",
+    "@types/node": "12.7.2",
+    "@types/react": "16.9.2",
+    "@types/react-dom": "16.8.5",
+    "@types/react-redux": "^7.1.2",
+    "@types/react-router-dom": "^4.3.4",
+    "babel-plugin-import": "^1.12.0",
+    "customize-cra": "^0.5.0",
+    "husky": "^3.0.4",
+    "less": "^3.10.1",
+    "less-loader": "^5.0.0",
+    "lint-staged": "^9.2.3",
+    "node-sass": "^4.12.0",
+    "prettier": "^1.18.2",
+    "react-app-rewired": "^2.1.3",
+    "serve": "^11.1.0",
+    "source-map-explorer": "^2.0.1"
   },
   "husky": {
     "hooks": {
@@ -20,32 +53,6 @@
       "prettier --single-quote --write",
       "git add"
     ]
-  },
-  "homepage" : "http://kingzez.github.io/react-template",
-  "dependencies": {
-    "antd": "^3.20.7",
-    "connected-react-router": "^6.5.2",
-    "history": "^4.9.0",
-    "prop-types": "^15.7.2",
-    "react": "^16.8.6",
-    "react-app-rewired": "^2.1.3",
-    "react-dom": "^16.8.6",
-    "react-redux": "^7.1.0",
-    "react-router-dom": "^5.0.1",
-    "redux": "^4.0.4"
-  },
-  "devDependencies": {
-    "babel-plugin-import": "^1.12.0",
-    "customize-cra": "^0.4.1",
-    "husky": "^3.0.2",
-    "less": "^3.9.0",
-    "less-loader": "^5.0.0",
-    "lint-staged": "^9.2.1",
-    "node-sass": "^4.12.0",
-    "prettier": "^1.18.2",
-    "react-scripts": "3.0.1",
-    "serve": "^11.1.0",
-    "source-map-explorer": "^2.0.1"
   },
   "eslintConfig": {
     "extends": "react-app"

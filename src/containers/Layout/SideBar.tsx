@@ -1,15 +1,19 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Layout, Menu, Icon } from 'antd'
 import { routeList } from 'routes'
+import { ApplicationState } from 'reducers'
 import logo from 'assets/logo.svg'
+
+interface StateProps {
+  collapsed: boolean
+}
 
 const { Sider } = Layout
 const { SubMenu } = Menu
 
-const SideBar = props => (
+const SideBar = (props: StateProps) => (
   <Sider trigger={null} collapsible collapsed={props.collapsed}>
     <div className="sider-menu-logo">
       <img src={logo} alt="logo" />
@@ -46,11 +50,7 @@ const SideBar = props => (
   </Sider>
 )
 
-SideBar.propTypes = {
-  collapsed: PropTypes.bool
-}
-
-const mapStateToProps = state => ({
+const mapStateToProps = (state: ApplicationState) => ({
   collapsed: state.collapsed
 })
 

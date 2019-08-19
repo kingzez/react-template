@@ -1,10 +1,23 @@
 import React from 'react'
-import ProTypes from 'prop-types'
+import { Dispatch } from 'redux'
 import { connect } from 'react-redux'
 import { Button, Tag } from 'antd'
+import { RouteComponentProps } from 'react-router'
 import { increment, decrement } from 'actions/counter'
+import { ApplicationState } from 'reducers'
 
-const Counter = props => (
+interface StateProps {
+  count: number
+}
+
+interface DispatchProps {
+  increment: () => void
+  decrement: () => void
+}
+
+const Counter = (
+  props: RouteComponentProps<any> & StateProps & DispatchProps
+) => (
   <div>
     <Tag color="blue">Counter: {props.count}</Tag>
     <Button type="primary" onClick={props.increment}>
@@ -16,17 +29,11 @@ const Counter = props => (
   </div>
 )
 
-Counter.propTypes = {
-  count: ProTypes.number,
-  increment: ProTypes.func.isRequired,
-  decrement: ProTypes.func.isRequired
-}
-
-const mapStateToProps = state => ({
+const mapStateToProps = (state: ApplicationState) => ({
   count: state.count
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch: Dispatch) => ({
   increment: () => dispatch(increment()),
   decrement: () => dispatch(decrement())
 })

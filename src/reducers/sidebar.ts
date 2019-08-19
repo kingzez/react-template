@@ -1,4 +1,6 @@
-const sidebarReducer = (state = false, action) => {
+import { Action } from 'redux';
+
+const sidebarReducer = (state: boolean = false, action: Action) => {
   switch (action.type) {
     case 'TOGGLE_SIDEBAR':
       return true
