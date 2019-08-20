@@ -1,5 +1,5 @@
 {
-  "name": "react-template-ts",
+  "name": "react-template",
   "version": "0.1.0",
   "scripts": {
     "start": "react-app-rewired start",
@@ -7,10 +7,14 @@
     "test": "react-app-rewired test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "serve": "serve -s build"
+    "serve": "serve -s build",
+    "pipeline:dev": "env-cmd -f .env.develop npm run build",
+    "pipeline:test": "env-cmd -f .env.test npm run build",
+    "pipeline:staging": "env-cmd -f .env.staging npm run build",
+    "pipeline:prod": "env-cmd -f .env.production npm run build"
   },
   "author": "wangzezhi",
-  "homepage": "http://kingzez.github.io/react-template",
+  "homepage": ".",
   "dependencies": {
     "antd": "^3.22.0",
     "connected-react-router": "^6.5.2",
@@ -33,6 +37,7 @@
     "@types/react-router-dom": "^4.3.4",
     "babel-plugin-import": "^1.12.0",
     "customize-cra": "^0.5.0",
+    "env-cmd": "^9.0.3",
     "husky": "^3.0.4",
     "less": "^3.10.1",
     "less-loader": "^5.0.0",
