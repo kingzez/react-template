@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { lazy, Suspense } from 'react'
 import { Route, Switch, RouteProps } from 'react-router'
-import Home from 'containers/Home'
-import Hello from 'containers/Hello'
-import Counter from 'containers/Counter'
-import NoMatch from 'containers/NoMatch'
+import Loading from 'components/loading'
+
+const Home = lazy(() => import('containers/Home'))
+const Hello = lazy(() => import('containers/Hello'))
+const Counter = lazy(() => import('containers/Counter'))
+const NoMatch = lazy(() => import('containers/NoMatch'))
 
 interface RouteEle extends RouteProps {
   icon?: string
@@ -81,10 +83,12 @@ function RouteWithSubRoutes(route: RouteEle) {
 }
 
 const routes = (
-  <Switch>
-    {routeList.map(route => RouteWithSubRoutes(route))}
-    <Route component={NoMatch} />
-  </Switch>
+  <Suspense fallback={<Loading />}>
+    <Switch>
+      {routeList.map(route => RouteWithSubRoutes(route))}
+      <Route component={NoMatch} />
+    </Switch>
+  </Suspense>
 )
 
 export default routes
