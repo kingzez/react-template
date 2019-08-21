@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/react-template/static/css/main.7d043db2.chunk.css",
+    "main.js": "/react-template/static/js/main.bd638625.chunk.js",
+    "main.js.map": "/react-template/static/js/main.bd638625.chunk.js.map",
+    "runtime~main.js": "/react-template/static/js/runtime~main.424915e3.js",
+    "runtime~main.js.map": "/react-template/static/js/runtime~main.424915e3.js.map",
+    "static/css/2.59843f55.chunk.css": "/react-template/static/css/2.59843f55.chunk.css",
+    "static/js/2.62fa0cb8.chunk.js": "/react-template/static/js/2.62fa0cb8.chunk.js",
+    "static/js/2.62fa0cb8.chunk.js.map": "/react-template/static/js/2.62fa0cb8.chunk.js.map",
+    "static/css/3.d8b3686c.chunk.css": "/react-template/static/css/3.d8b3686c.chunk.css",
+    "static/js/3.ff844aff.chunk.js": "/react-template/static/js/3.ff844aff.chunk.js",
+    "static/js/3.ff844aff.chunk.js.map": "/react-template/static/js/3.ff844aff.chunk.js.map",
+    "static/js/4.51ffca3e.chunk.js": "/react-template/static/js/4.51ffca3e.chunk.js",
+    "static/js/4.51ffca3e.chunk.js.map": "/react-template/static/js/4.51ffca3e.chunk.js.map",
+    "static/js/5.f132ef01.chunk.js": "/react-template/static/js/5.f132ef01.chunk.js",
+    "static/js/5.f132ef01.chunk.js.map": "/react-template/static/js/5.f132ef01.chunk.js.map",
+    "static/js/6.aeb82ecd.chunk.js": "/react-template/static/js/6.aeb82ecd.chunk.js",
+    "static/js/6.aeb82ecd.chunk.js.map": "/react-template/static/js/6.aeb82ecd.chunk.js.map",
+    "static/js/7.edc98436.chunk.js": "/react-template/static/js/7.edc98436.chunk.js",
+    "static/js/7.edc98436.chunk.js.map": "/react-template/static/js/7.edc98436.chunk.js.map",
+    "index.html": "/react-template/index.html",
+    "precache-manifest.3446bac316286109fcadb4d9f6e8e59a.js": "/react-template/precache-manifest.3446bac316286109fcadb4d9f6e8e59a.js",
+    "service-worker.js": "/react-template/service-worker.js",
+    "static/css/2.59843f55.chunk.css.map": "/react-template/static/css/2.59843f55.chunk.css.map",
+    "static/css/3.d8b3686c.chunk.css.map": "/react-template/static/css/3.d8b3686c.chunk.css.map",
+    "static/css/main.7d043db2.chunk.css.map": "/react-template/static/css/main.7d043db2.chunk.css.map",
+    "static/media/logo.svg": "/react-template/static/media/logo.4ce0a0eb.svg"
+  }
+}
