@@ -21,11 +21,13 @@
 - [x] create-rtpl ([create-rtpl](https://github.com/kingzez/create-rtpl) template installer)
 - [x] typescript version priority
 - [x] pipeline
+- [x] redux-saga (side effect model)
 - [ ] fetch package
 - [ ] permission
 - [ ] multi api
 - [ ] sso
 - [ ] graphql
+- [ ] redux-logger
 
 
 ### Usage

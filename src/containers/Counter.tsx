@@ -13,6 +13,7 @@ interface StateProps {
 interface DispatchProps {
   increment: () => void
   decrement: () => void
+  incrementAsync: () => void
 }
 
 const Counter = (
@@ -26,6 +27,9 @@ const Counter = (
     <Button type="danger" onClick={props.decrement}>
       -
     </Button>
+    <Button type="primary" onClick={props.incrementAsync}>
+      async +
+    </Button>
   </div>
 )
 
@@ -35,7 +39,8 @@ const mapStateToProps = (state: ApplicationState) => ({
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   increment: () => dispatch(increment()),
-  decrement: () => dispatch(decrement())
+  decrement: () => dispatch(decrement()),
+  incrementAsync: () => dispatch({ type: 'INCREMENT_ASYNC' })
 })
 
 export default connect(
