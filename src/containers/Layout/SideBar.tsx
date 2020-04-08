@@ -1,10 +1,11 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { Layout, Menu, Icon } from 'antd'
+import { Layout, Menu } from 'antd'
+import { Icon } from '@ant-design/compatible'
 import { routeList } from 'routes'
 import { ApplicationState } from 'reducers'
-import logo from 'assets/logo.svg'
+import Logo from './Logo'
 
 interface StateProps {
   collapsed: boolean
@@ -15,12 +16,9 @@ const { SubMenu } = Menu
 
 const SideBar = (props: StateProps) => (
   <Sider trigger={null} collapsible collapsed={props.collapsed}>
-    <div className="sider-menu-logo">
-      <img src={logo} alt="logo" />
-      <h1>React Admin</h1>
-    </div>
+    <Logo />
     <Menu theme="dark" mode="inline" defaultSelectedKeys={['/']}>
-      {routeList.map(item =>
+      {routeList.map((item) =>
         item.children && item.children.length > 0 ? (
           <SubMenu
             key={item.path}
@@ -30,7 +28,7 @@ const SideBar = (props: StateProps) => (
                 <span>{item.title}</span>
               </span>
             }>
-            {item.children.map(subItem => (
+            {item.children.map((subItem) => (
               <Menu.Item key={subItem.path}>
                 <Icon type={subItem.icon} />
                 <span>{subItem.title}</span>
@@ -51,7 +49,7 @@ const SideBar = (props: StateProps) => (
 )
 
 const mapStateToProps = (state: ApplicationState) => ({
-  collapsed: state.collapsed
+  collapsed: state.collapsed,
 })
 
 export default connect(mapStateToProps)(SideBar)

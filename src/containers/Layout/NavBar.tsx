@@ -1,7 +1,8 @@
 import React from 'react'
 import { Dispatch } from 'redux'
 import { connect } from 'react-redux'
-import { Layout, Icon } from 'antd'
+import { Layout } from 'antd'
+import { MenuFoldOutlined, MenuUnfoldOutlined } from '@ant-design/icons'
 import { ApplicationState } from 'reducers'
 import { toggle, close } from 'actions/sidebar'
 
@@ -21,26 +22,23 @@ const NavBar = (props: StateProps & DispatchProps) => (
     style={{
       background: '#fff',
       padding: 0,
-      boxShadow: '0 1px 4px rgba(0, 21, 41, 0.08)'
+      boxShadow: '0 1px 4px rgba(0, 21, 41, 0.08)',
     }}>
-    <Icon
+    <div
       className="trigger"
-      type={props.collapsed ? 'menu-unfold' : 'menu-fold'}
-      onClick={props.collapsed ? props.close : props.toggle}
-    />
+      onClick={props.collapsed ? props.close : props.toggle}>
+      {props.collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+    </div>
   </Header>
 )
 
 const mapStateToProps = (state: ApplicationState) => ({
-  collapsed: state.collapsed
+  collapsed: state.collapsed,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   toggle: () => dispatch(toggle()),
-  close: () => dispatch(close())
+  close: () => dispatch(close()),
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(NavBar)
+export default connect(mapStateToProps, mapDispatchToProps)(NavBar)
