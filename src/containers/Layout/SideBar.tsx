@@ -15,7 +15,7 @@ const { Sider } = Layout
 const { SubMenu } = Menu
 
 const SideBar = (props: StateProps) => (
-  <Sider trigger={null} collapsible collapsed={props.collapsed}>
+  <Sider trigger={null} collapsible collapsed={props.collapsed} width="240">
     <Logo />
     <Menu theme="dark" mode="inline" defaultSelectedKeys={['/']}>
       {routeList.map((item) =>
