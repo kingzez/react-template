@@ -1,20 +1,31 @@
-#root {
-  height: 100%;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .trigger {
+    font-size: 18px;
+    line-height: 64px;
+    padding: 0 24px;
+    cursor: pointer;
+    transition: color 0.3s;
+  }
+
+  .trigger:hover {
+    color: #1890ff;
+  }
+
+  .headerRight {
+    display: flex;
+    align-items: center;
+    padding-right: 12px;
+    .username {
+      padding: 0 12px;
+    }
+  }
 }
 
-.trigger {
-  font-size: 18px;
-  line-height: 64px;
-  padding: 0 24px;
-  cursor: pointer;
-  transition: color 0.3s;
-}
-
-.trigger:hover {
-  color: #1890ff;
-}
-
-.sider-menu-logo {
+.logo {
   position: relative;
   height: 64px;
   padding-left: 24px;

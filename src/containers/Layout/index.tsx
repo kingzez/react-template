@@ -3,7 +3,6 @@ import { Layout } from 'antd'
 import NavBar from './NavBar'
 import SideBar from './SideBar'
 import Content from './Content'
-import './Layout.scss'
 
 const Root = () => (
   <Layout style={{ height: '100%' }}>

@@ -56,3 +56,37 @@ serve static, need build first
 ```shell
 npm run serve
 ```
+
+
+#### CSS Module
+>Naming [css-modules naming](https://github.com/css-modules/css-modules#naming)
+
+**Button.module.css**
+
+```css
+.error {
+  background-color: red;
+}
+```
+
+**another-stylesheet.css**
+
+```css
+.error {
+  color: red;
+}
+```
+
+**Button.js**
+
+```js
+import React, { Component } from 'react';
+import styles from './Button.module.css'; // Import css modules stylesheet as styles
+import './another-stylesheet.css'; // Import regular stylesheet
+class Button extends Component {
+  render() {
+    // reference as a js object
+    return <button className={styles.error}>Error Button</button>;
+  }
+}
+```
