@@ -2,12 +2,11 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
-import configureStore, { history } from './configureStore'
+import store, { history } from './configureStore'
 import * as serviceWorker from './serviceWorker'
 import Layout from './containers/Layout'
 import './index.less'
 
-const store = configureStore()
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
