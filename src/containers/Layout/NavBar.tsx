@@ -6,6 +6,7 @@ import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
   UserOutlined,
+  LogoutOutlined,
 } from '@ant-design/icons'
 import { ApplicationState } from 'reducers'
 import { toggle, close } from 'actions/sidebar'
@@ -22,27 +23,14 @@ interface DispatchProps {
 
 const { Header } = Layout
 const menu = (
-  <Menu>
+  <Menu style={{ width: 120 }}>
     <Menu.Item>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="http://www.alipay.com/">
-        1st menu item
-      </a>
+      <UserOutlined />
+      个人中心
     </Menu.Item>
     <Menu.Item>
-      <a
-        target="_blank"
-        rel="noopener noreferrer"
-        href="http://www.taobao.com/">
-        2nd menu item
-      </a>
-    </Menu.Item>
-    <Menu.Item>
-      <a target="_blank" rel="noopener noreferrer" href="http://www.tmall.com/">
-        3rd menu item
-      </a>
+      <LogoutOutlined />
+      退出登录
     </Menu.Item>
   </Menu>
 )
@@ -61,9 +49,9 @@ const NavBar = (props: StateProps & DispatchProps) => (
       {props.collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
     </div>
     <div className={styles.headerRight}>
-      <Avatar icon={<UserOutlined />} />
+      <Avatar size="small" icon={<UserOutlined />} />
       <Dropdown overlay={menu}>
-        <span className={styles.username}>王泽知</span>
+        <span className={styles.username}>Vincent W</span>
       </Dropdown>
     </div>
   </Header>
