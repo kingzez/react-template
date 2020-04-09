@@ -1,8 +1,8 @@
-English | [简体中文](./README.zh-CN.md)
+[English](./README.md) | 简体中文
 
 # React Template
 
-### Use Package
+### 使用的包
 
 - react
 - react-router v5
@@ -15,54 +15,54 @@ English | [简体中文](./README.zh-CN.md)
 
 ### TODO
 - [x] antd ui
-- [x] custom theme
+- [x] 自定义主题
 - [x] react-router
 - [x] react-redux
-- [x] admin layout
-- [x] sidebar support nest
-- [x] create-rtpl ([create-rtpl](https://github.com/kingzez/create-rtpl) template installer)
-- [x] typescript version priority
-- [x] pipeline
-- [x] redux-saga (side effect model)
+- [x] admin布局
+- [x] 侧导航支持嵌套
+- [x] create-rtpl ([create-rtpl](https://github.com/kingzez/create-rtpl) 模板安装器)
+- [x] typescript 版本优先
+- [x] pipeline 流水线
+- [x] redux-saga (副作用)
 - [ ] fetch package
-- [ ] permission
-- [ ] multi api
-- [ ] sso
+- [ ] permission 权限
+- [ ] 支持多api
+- [ ] 单点登录
 - [ ] graphql
 - [ ] redux-logger
 
 
-### Usage
+### 用法
 
-install dependency
+安装依赖
 ```shell
 npm i
 ```
 
-dev
+开发
 ```shell
 npm start
 ```
 
-build
+打包构建
 ```shell
 npm run build
 ```
 
-analyze build
+构建分析
 ```shell
 npm run analyze
 ```
 
-serve static, need build first
+静态服务，需要先打包构建
 ```shell
 npm run serve
 ```
 
 
 #### [CSS Modules](https://github.com/css-modules/css-modules)
-> [Naming](https://github.com/css-modules/css-modules#naming)
-> [Learn more](https://css-tricks.com/css-modules-part-1-need/)
+> [命名](https://github.com/css-modules/css-modules#naming)
+> [了解更多](https://css-tricks.com/css-modules-part-1-need/)
 
 **Button.module.css**
 
@@ -84,11 +84,11 @@ npm run serve
 
 ```js
 import React, { Component } from 'react';
-import styles from './Button.module.css'; // Import css modules stylesheet as styles
-import './another-stylesheet.css'; // Import regular stylesheet
+import styles from './Button.module.css'; // 作为模块导入
+import './another-stylesheet.css'; // 普通的导入
 class Button extends Component {
   render() {
-    // reference as a js object
+    // 作为 js 的对象引用
     return <button className={styles.error}>Error Button</button>;
   }
 }
