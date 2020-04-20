@@ -32,3 +32,5 @@ export const login = ({
     return { type: constants.LOGIN_FAILURE, error }
   }
 }
+
+export const logout = () => ({ type: constants.LOGOUT })

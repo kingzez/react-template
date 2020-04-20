@@ -1,7 +1,7 @@
 import React from 'react'
 import { Dispatch } from 'redux'
-import { connect, useSelector } from 'react-redux'
-import { Layout, Avatar, Menu, Dropdown } from 'antd'
+import { connect, useSelector, useDispatch } from 'react-redux'
+import { Layout, Avatar, Menu, Dropdown, message } from 'antd'
 import {
   MenuFoldOutlined,
   MenuUnfoldOutlined,
@@ -10,6 +10,7 @@ import {
 } from '@ant-design/icons'
 import { ApplicationState } from 'reducers'
 import { toggle, close } from 'actions/sidebar'
+import * as userAction from 'actions/user'
 import styles from './Layout.module.scss'
 
 interface StateProps {
@@ -22,23 +23,34 @@ interface DispatchProps {
 }
 
 const { Header } = Layout
-const menu = (
-  <Menu style={{ width: 120 }}>
-    <Menu.Item>
-      <UserOutlined />
-      个人中心
-    </Menu.Item>
-    <Menu.Item>
-      <LogoutOutlined />
-      退出登录
-    </Menu.Item>
-  </Menu>
-)
 
 const NavBar = (props: StateProps & DispatchProps) => {
-  const user = useSelector((state: any) => state.user)
-  const { username } = user.user
-  console.log(user)
+  const dispatch = useDispatch()
+  const userState = useSelector((state: any) => state.user)
+  const { username } = userState.user
+  console.log(userState)
+
+  const menuClick = ({ key }: { key: string }) => {
+    if (key === 'logout') {
+      dispatch(userAction.logout())
+    }
+    if (key === 'person') {
+      message.info(`todo go ${key}`)
+    }
+  }
+
+  const menu = (
+    <Menu style={{ width: 120 }} onClick={menuClick}>
+      <Menu.Item key="person">
+        <UserOutlined />
+        个人中心
+      </Menu.Item>
+      <Menu.Item key="logout">
+        <LogoutOutlined />
+        退出登录
+      </Menu.Item>
+    </Menu>
+  )
 
   return (
     <Header
