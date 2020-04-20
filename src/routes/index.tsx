@@ -3,7 +3,7 @@ import { Route, Switch, RouteProps } from 'react-router'
 import Loading from 'components/loading'
 
 const Home = lazy(() => import('containers/Home'))
-const Hello = lazy(() => import('containers/Hello'))
+const Login = lazy(() => import('containers/Login/index'))
 const Counter = lazy(() => import('containers/Counter'))
 const NoMatch = lazy(() => import('containers/NoMatch'))
 
@@ -20,7 +20,7 @@ export const routeList: RouteEle[] = [
     title: 'Home',
     path: '/',
     exact: true,
-    component: Home
+    component: Home,
   },
   {
     icon: 'smile',
@@ -33,31 +33,31 @@ export const routeList: RouteEle[] = [
         title: 'One',
         path: '/nest/one',
         exact: true,
-        component: () => <div>One</div>
+        component: () => <div>One</div>,
       },
       {
         icon: 'usergroup-add',
         title: 'Two',
         path: '/nest/two',
         exact: true,
-        component: () => <div>Two</div>
-      }
-    ]
+        component: () => <div>Two</div>,
+      },
+    ],
   },
   {
     icon: 'calculator',
     title: 'Counter',
     path: '/counter',
     exact: true,
-    component: Counter
+    component: Counter,
   },
   {
     icon: 'code',
-    title: 'Hello',
-    path: '/hello',
+    title: 'Login',
+    path: '/login',
     exact: true,
-    component: Hello
-  }
+    component: Login,
+  },
 ]
 
 // TODO：not good, just support level two
@@ -85,7 +85,7 @@ function RouteWithSubRoutes(route: RouteEle) {
 const routes = (
   <Suspense fallback={<Loading />}>
     <Switch>
-      {routeList.map(route => RouteWithSubRoutes(route))}
+      {routeList.map((route) => RouteWithSubRoutes(route))}
       <Route component={NoMatch} />
     </Switch>
   </Suspense>

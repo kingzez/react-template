@@ -1,4 +1,4 @@
-import { Action } from 'redux';
+import { Action } from 'redux'
 
 const sidebarReducer = (state: boolean = false, action: Action) => {
   switch (action.type) {

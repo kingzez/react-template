@@ -1,6 +1,6 @@
 import React from 'react'
 import { Dispatch } from 'redux'
-import { connect } from 'react-redux'
+import { connect, useSelector } from 'react-redux'
 import { Layout, Avatar, Menu, Dropdown } from 'antd'
 import {
   MenuFoldOutlined,
@@ -35,27 +35,32 @@ const menu = (
   </Menu>
 )
 
-const NavBar = (props: StateProps & DispatchProps) => (
-  <Header
-    className={styles.header}
-    style={{
-      background: '#fff',
-      padding: 0,
-      boxShadow: '0 1px 4px rgba(0, 21, 41, 0.08)',
-    }}>
-    <div
-      className={styles.trigger}
-      onClick={props.collapsed ? props.close : props.toggle}>
-      {props.collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-    </div>
-    <div className={styles.headerRight}>
-      <Avatar size="small" icon={<UserOutlined />} />
-      <Dropdown overlay={menu}>
-        <span className={styles.username}>Vincent W</span>
-      </Dropdown>
-    </div>
-  </Header>
-)
+const NavBar = (props: StateProps & DispatchProps) => {
+  const user = useSelector((state: any) => state.user)
+  console.log(user)
+
+  return (
+    <Header
+      className={styles.header}
+      style={{
+        background: '#fff',
+        padding: 0,
+        boxShadow: '0 1px 4px rgba(0, 21, 41, 0.08)',
+      }}>
+      <div
+        className={styles.trigger}
+        onClick={props.collapsed ? props.close : props.toggle}>
+        {props.collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
+      </div>
+      <div className={styles.headerRight}>
+        <Avatar size="small" icon={<UserOutlined />} />
+        <Dropdown overlay={menu}>
+          <span className={styles.username}>{user.username}</span>
+        </Dropdown>
+      </div>
+    </Header>
+  )
+}
 
 const mapStateToProps = (state: ApplicationState) => ({
   collapsed: state.collapsed,
