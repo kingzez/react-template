@@ -1,1 +1,0 @@
-{"version":3,"sources":["containers/Home.tsx"],"names":["Home","console","log","process"],"mappings":"4HAAA,2BAOeA,UALF,WAEX,OADAC,QAAQC,IAAIC,yGACL","file":"static/js/6.aeb82ecd.chunk.js","sourcesContent":["import React from 'react'\n\nconst Home = () => {\n  console.log(process.env)\n  return <div>Home</div>\n}\n\nexport default Home\n"],"sourceRoot":""}

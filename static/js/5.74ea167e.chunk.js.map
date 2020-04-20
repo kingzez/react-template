@@ -1,0 +1,1 @@
+{"version":3,"sources":["containers/NoMatch.tsx"],"names":["NoMatch"],"mappings":"wHAAA,2BAQeA,UANC,kBACd","file":"static/js/5.74ea167e.chunk.js","sourcesContent":["import React from 'react'\n\nconst NoMatch = () => (\n  <div>\n    NoMatch\n  </div>\n)\n\nexport default NoMatch"],"sourceRoot":""}

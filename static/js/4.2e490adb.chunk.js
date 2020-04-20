@@ -1,0 +1,2 @@
+(this["webpackJsonpreact-template"]=this["webpackJsonpreact-template"]||[]).push([[4],{377:function(e,t,a){"use strict";a.r(t);var o=a(0),c=a.n(o);t.default=function(){return console.log(Object({NODE_ENV:"production",PUBLIC_URL:"/react-template",WDS_SOCKET_HOST:void 0,WDS_SOCKET_PATH:void 0,WDS_SOCKET_PORT:void 0,REACT_APP_API_URL:"http://api.example.com"})),c.a.createElement("div",null,"Home")}}}]);
+//# sourceMappingURL=4.2e490adb.chunk.js.map
