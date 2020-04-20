@@ -37,6 +37,7 @@ const menu = (
 
 const NavBar = (props: StateProps & DispatchProps) => {
   const user = useSelector((state: any) => state.user)
+  const { username } = user.user
   console.log(user)
 
   return (
@@ -55,7 +56,7 @@ const NavBar = (props: StateProps & DispatchProps) => {
       <div className={styles.headerRight}>
         <Avatar size="small" icon={<UserOutlined />} />
         <Dropdown overlay={menu}>
-          <span className={styles.username}>{user.username}</span>
+          <span className={styles.username}>{username}</span>
         </Dropdown>
       </div>
     </Header>
