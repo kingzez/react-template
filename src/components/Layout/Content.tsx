@@ -1,6 +1,6 @@
 import React from 'react'
 import { Layout } from 'antd'
-import routes from 'routes'
+import Router from 'components/Router'
 
 const { Content } = Layout
 
@@ -10,9 +10,9 @@ const RootContent = () => (
       margin: '24px 16px',
       padding: 24,
       background: '#fff',
-      minHeight: 280
+      minHeight: 280,
     }}>
-    {routes}
+    <Router />
   </Content>
 )
 

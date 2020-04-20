@@ -1,13 +1,13 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
-import Layout from 'containers/Layout'
-import Login from 'containers/Login'
+import Layout from 'components/Layout'
+import Login from 'pages/Login'
 
-const Main = () => {
+const Root = () => {
   const isAuthed = useSelector((state: any) => state.user.isAuthed)
   console.log('isAuthed', isAuthed)
 
   return isAuthed ? <Layout /> : <Login />
 }
 
-export default Main
+export default Root

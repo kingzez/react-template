@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import { Layout, Menu } from 'antd'
 import { Icon } from '@ant-design/compatible'
-import { routeList } from 'routes'
+import { routes } from 'components/Router'
 import { ApplicationState } from 'reducers'
 import Logo from './Logo'
 
@@ -18,7 +18,7 @@ const SideBar = (props: StateProps) => (
   <Sider trigger={null} collapsible collapsed={props.collapsed} width="240">
     <Logo />
     <Menu theme="dark" mode="inline" defaultSelectedKeys={['/']}>
-      {routeList.map((item) =>
+      {routes.map((item) =>
         item.children && item.children.length > 0 ? (
           <SubMenu
             key={item.path}

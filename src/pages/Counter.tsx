@@ -34,16 +34,13 @@ const Counter = (
 )
 
 const mapStateToProps = (state: ApplicationState) => ({
-  count: state.count
+  count: state.count,
 })
 
 const mapDispatchToProps = (dispatch: Dispatch) => ({
   increment: () => dispatch(increment()),
   decrement: () => dispatch(decrement()),
-  incrementAsync: () => dispatch({ type: 'INCREMENT_ASYNC' })
+  incrementAsync: () => dispatch({ type: 'INCREMENT_ASYNC' }),
 })
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Counter)
+export default connect(mapStateToProps, mapDispatchToProps)(Counter)

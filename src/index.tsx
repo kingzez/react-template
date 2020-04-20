@@ -4,13 +4,13 @@ import { Provider } from 'react-redux'
 import { ConnectedRouter } from 'connected-react-router'
 import store, { history } from './configureStore'
 import * as serviceWorker from './serviceWorker'
-import Main from './containers/Main'
+import Root from 'components/Root'
 import './index.less'
 
 ReactDOM.render(
   <Provider store={store}>
     <ConnectedRouter history={history}>
-      <Main />
+      <Root />
     </ConnectedRouter>
   </Provider>,
   document.getElementById('root')

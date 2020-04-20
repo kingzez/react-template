@@ -1,32 +1,35 @@
 import React, { lazy, Suspense } from 'react'
 import { Route, Switch, RouteProps } from 'react-router'
-import Loading from 'components/loading'
+import Loading from 'components/Loading'
 
-const Home = lazy(() => import('containers/Home'))
-const Login = lazy(() => import('containers/Login/index'))
-const Counter = lazy(() => import('containers/Counter'))
-const NoMatch = lazy(() => import('containers/NoMatch'))
+const Home = lazy(() => import('pages/Home'))
+const Login = lazy(() => import('pages/Login'))
+const Counter = lazy(() => import('pages/Counter'))
+const NoMatch = lazy(() => import('pages/NoMatch'))
 
-interface RouteEle extends RouteProps {
+interface RouteElement extends RouteProps {
   icon?: string
   title: string
-  children?: RouteEle[]
   path: string
+  auth: string
+  children?: RouteElement[]
 }
 
-export const routeList: RouteEle[] = [
+export const routes: RouteElement[] = [
   {
     icon: 'home',
     title: 'Home',
     path: '/',
     exact: true,
     component: Home,
+    auth: '',
   },
   {
     icon: 'smile',
     title: 'Nest',
     path: '/nest',
     exact: false,
+    auth: '',
     children: [
       {
         icon: 'user-add',
@@ -34,6 +37,7 @@ export const routeList: RouteEle[] = [
         path: '/nest/one',
         exact: true,
         component: () => <div>One</div>,
+        auth: '',
       },
       {
         icon: 'usergroup-add',
@@ -41,6 +45,7 @@ export const routeList: RouteEle[] = [
         path: '/nest/two',
         exact: true,
         component: () => <div>Two</div>,
+        auth: '',
       },
     ],
   },
@@ -50,6 +55,7 @@ export const routeList: RouteEle[] = [
     path: '/counter',
     exact: true,
     component: Counter,
+    auth: '',
   },
   {
     icon: 'code',
@@ -57,11 +63,12 @@ export const routeList: RouteEle[] = [
     path: '/login',
     exact: true,
     component: Login,
+    auth: '',
   },
 ]
 
 // TODO：not good, just support level two
-function RouteWithSubRoutes(route: RouteEle) {
+const RouteWithSubRoutes = (route: RouteElement): JSX.Element => {
   return (
     <Route
       key={route.path}
@@ -69,7 +76,7 @@ function RouteWithSubRoutes(route: RouteEle) {
       path={route.path}
       component={route.component}>
       {route.children && route.children.length > 0
-        ? route.children.map((subRoute: RouteEle) => (
+        ? route.children.map((subRoute: RouteElement) => (
             <Route
               key={subRoute.path}
               exact={subRoute.exact}
@@ -82,13 +89,13 @@ function RouteWithSubRoutes(route: RouteEle) {
   )
 }
 
-const routes = (
+const Router = () => (
   <Suspense fallback={<Loading />}>
     <Switch>
-      {routeList.map((route) => RouteWithSubRoutes(route))}
+      {routes.map((route) => RouteWithSubRoutes(route))}
       <Route component={NoMatch} />
     </Switch>
   </Suspense>
 )
 
-export default routes
+export default Router
