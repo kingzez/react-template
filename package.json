@@ -14,7 +14,7 @@
     "pipeline:prod": "env-cmd -f .env.production npm run build"
   },
   "author": "wangzezhi",
-  "homepage": ".",
+  "homepage" : "http://kingzez.github.io/react-template",
   "dependencies": {
     "@ant-design/compatible": "^1.0.2",
     "antd": "^4.1.1",
