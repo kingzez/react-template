@@ -24,7 +24,7 @@ English | [简体中文](./README.zh-CN.md)
 - [x] typescript version priority
 - [x] pipeline
 - [x] redux-saga (side effect model)
-- [ ] fetch package
+- [x] fetch package (use axios)
 - [ ] permission
 - [ ] multi api
 - [ ] sso

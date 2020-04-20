@@ -24,7 +24,7 @@
 - [x] typescript 版本优先
 - [x] pipeline 流水线
 - [x] redux-saga (副作用)
-- [ ] fetch package
+- [x] fetch package (使用 axios)
 - [ ] permission 权限
 - [ ] 支持多api
 - [ ] 单点登录
