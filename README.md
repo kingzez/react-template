@@ -93,3 +93,5 @@ class Button extends Component {
   }
 }
 ```
+
+`typescript-plugin-css-modules` vscode can intelligence

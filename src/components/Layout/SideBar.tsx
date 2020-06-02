@@ -14,36 +14,55 @@ interface StateProps {
 const { Sider } = Layout
 const { SubMenu } = Menu
 
+// todo haspermission
+// const hasPermission = (auth: string) => {
+//   console.log(auth)
+//   return true
+// }
+// https://github.com/jsmanifest/modern-sidebar/blob/master/src/Sidebar.js
+const SideBarItem = ({ item, ...rest }: { item: any }) => {
+  const { title, path, icon, children } = item
+  console.log(item)
+  return (
+    <React.Fragment>
+      {Array.isArray(children) ? (
+        <SubMenu
+          key={title}
+          title={
+            <span>
+              <Icon type={icon} />
+              <span>{title}</span>
+            </span>
+          }
+          {...rest}>
+          {children.map((subItem: any) => (
+            // ToDo fix
+            // <SideBarItem item={subItem} key={title} />
+            <Menu.Item key={subItem.title} {...rest}>
+              <Icon type={subItem.icon} />
+              <span>{subItem.title}</span>
+              <Link to={subItem.path} />
+            </Menu.Item>
+          ))}
+        </SubMenu>
+      ) : (
+        <Menu.Item key={title} {...rest}>
+          <Icon type={icon} />
+          <span>{title}</span>
+          <Link to={path} />
+        </Menu.Item>
+      )}
+    </React.Fragment>
+  )
+}
+
 const SideBar = (props: StateProps) => (
   <Sider trigger={null} collapsible collapsed={props.collapsed} width="240">
     <Logo />
     <Menu theme="dark" mode="inline" defaultSelectedKeys={['/']}>
-      {routes.map((item) =>
-        item.children && item.children.length > 0 ? (
-          <SubMenu
-            key={item.path}
-            title={
-              <span>
-                <Icon type={item.icon} />
-                <span>{item.title}</span>
-              </span>
-            }>
-            {item.children.map((subItem) => (
-              <Menu.Item key={subItem.path}>
-                <Icon type={subItem.icon} />
-                <span>{subItem.title}</span>
-                <Link to={subItem.path} />
-              </Menu.Item>
-            ))}
-          </SubMenu>
-        ) : (
-          <Menu.Item key={item.path}>
-            <Icon type={item.icon} />
-            <span>{item.title}</span>
-            <Link to={item.path} />
-          </Menu.Item>
-        )
-      )}
+      {routes.map((item) => (
+        <SideBarItem item={item} key={item.path} />
+      ))}
     </Menu>
   </Sider>
 )
